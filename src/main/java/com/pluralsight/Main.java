@@ -24,8 +24,8 @@ public Main(LedgerDAO ledgerDAO) {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         loadConnection(args[0], args[1]);
-        //List<Transaction> transactions = TransactionFileManager.loadTransactions();
-        List<Transaction> transactions = ledgerDAO.getAllTransactions();
+        List<Transaction> transactions = TransactionFileManager.loadTransactions();
+        //List<Transaction> transactions = ledgerDAO.getAllTransactions();
 
         boolean running = true;
 
