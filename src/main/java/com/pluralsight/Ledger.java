@@ -12,13 +12,7 @@ import java.util.stream.Collectors;
 import static com.pluralsight.Utility.systemDialogue;
 
 public class Ledger {
-    public final LedgerDAO ledgerDAO;
-    private static DataManager dataManager;
-    private static Ledger ledgerDao;
 
-    public Ledger(LedgerDAO ledgerDAO) {
-        this.ledgerDAO = ledgerDAO;
-    }
 
     public static void showLedger(List<Transaction> transactions, Scanner scanner) {
         boolean running = true;
@@ -36,7 +30,7 @@ public class Ledger {
             String choice = scanner.nextLine().toUpperCase();
 
             switch (choice) {
-                case "A" -> display(ledgerDao.getTransactions());
+                case "A" -> display(LedgerService.getLedger());
                 case "D" -> display(filterAmount(transactions, true));
                 case "P" -> display(filterAmount(transactions, false));
                 case "R" -> Reports.showReports(transactions, scanner);
@@ -52,12 +46,8 @@ public class Ledger {
                 .collect(Collectors.toList());
     }
 
-    public List<Transaction> getTransactions() {
-        return ledgerDao.getTransactions();
-    }
-
-//    public static void setDataManager(DataManager dataManager) {
-//        Ledger.dataManager = dataManager;
+//    public List<Transaction> getTransactions() {
+//        return ledgerDao.getTransactions();
 //    }
 
     private static void display(List<Transaction> list) {

@@ -1,6 +1,7 @@
 package com.pluralsight;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.LocalTime;
 
 public class Transaction {
@@ -17,8 +18,15 @@ public class Transaction {
         this.vendor = vendor;
         this.amount = amount;
     }
+    public Transaction(){
+        this.date = LocalDate.now();
+        this.time = LocalTime.now();
+        this.description = "";
+        this.vendor = "";
+        this.amount = 0;
+    }
 
-    public Transaction(int transaction_id, String trans_date, String trans_time,
+   /** public Transaction(int transaction_id, String trans_date, String trans_time,
                        String description, String vendor, String amountString) {
         this.transaction_id = transaction_id;
         this.trans_date = trans_date;
@@ -26,10 +34,22 @@ public class Transaction {
         this.description = description;
         this.vendor = vendor;
         this.amountString = amountString;
-    }
+    }**/
 
     public int getTransaction_id() {
         return transaction_id;
+    }
+
+    public void setAmount(double amount) {
+        this.amount = amount;
+    }
+
+    public void setDate(LocalDate date) {
+        this.date = date;
+    }
+
+    public void setTime(LocalTime time) {
+        this.time = time;
     }
 
     public void setTransaction_id(int transaction_id) {
