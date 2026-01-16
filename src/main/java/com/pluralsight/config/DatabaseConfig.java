@@ -7,7 +7,7 @@ import java.io.IOException;
 import java.util.Properties;
 
 public class DatabaseConfig {
-    private static final String url = "jdbc:mysql://127.0.0.1:3306/transactions";
+    private static final String url = "jdbc:mysql://127.0.0.1:3306/accountingledger";
     private static final String PROPERTIES_FILE = "application.properties";
 
     private static BasicDataSource dataSource;

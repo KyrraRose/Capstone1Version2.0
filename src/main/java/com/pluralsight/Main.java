@@ -30,7 +30,7 @@ public Main(LedgerDAO ledgerDAO) {
         boolean running = true;
 
         while (running) {
-            systemDialogue("\n\t=== FINANCIAL TRACKER ==="+
+            systemDialogue("\t=== FINANCIAL TRACKER ==="+
                     "\n\t\tD) Add Deposit"+
                     "\n\t\tP) Make Payment"+
                     "\n\t\tL) Ledger"+
