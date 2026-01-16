@@ -37,11 +37,11 @@ public class Utility {
     public static final String BLUE = "\033[38;2;1;186;239m";
     public static final String DARK_BLUE = "\033[38;2;9;64;116m";
     public static final String GOLD = "\033[38;2;254;144;0m";
-    public static final String LIGHT = "\033[38;2;191;255;188m";
+    public static final String LIGHT = "\033[38;2;250;244;211m";
 
     //Borders
-    public static final String BORDER_T = "\n╔══════. ■ .═════════════════════════════════════════╗\n";
-    public static final String BORDER_B = "\n╚══════════════════════════════════════. ■ .═════════╝";
+    public static final String BORDER_T = "\n╔══════. ■ .═════════════════════════════════════╗\n";
+    public static final String BORDER_B = "\n╚══════════════════════════════════. ■ .═════════╝";
     public static final String DISPLAY_T = "\n╔══════. ■ .═══════════════════════════════════════════════════════════════════════╗\n";
     public static final String DISPLAY_B = "\n╚════════════════════════════════════════════════════════════════════. ■ .═════════╝";
 
