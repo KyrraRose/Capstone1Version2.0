@@ -4,24 +4,37 @@ import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.List;
 import java.util.Scanner;
+import org.apache.commons.dbcp2.BasicDataSource;
+import java.sql.*;
 
 import static com.pluralsight.Utility.systemDialogue;
 
 public class Main {
+    private static final String url = "jdbc:mysql://127.0.0.1:3306/transactions";
+    private static Connection connection = null;
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+        loadConnection(args[0], args[1]);
         List<Transaction> transactions = TransactionFileManager.loadTransactions();
 
         boolean running = true;
 
         while (running) {
+<<<<<<< HEAD
             systemDialogue("\n\t=== FINANCIAL TRACKER ==="+
                     "\n\t\tD) Add Deposit"+
                     "\n\t\tP) Make Payment"+
                     "\n\t\tL) Ledger"+
                     "\n\t\tX) Exit") ;
 
+=======
+            System.out.println("\n=== FINANCIAL TRACKER ===");
+            System.out.println("D) Add Deposit");
+            System.out.println("P) Make Payment");
+            System.out.println("L) Ledger");
+            System.out.println("X) Exit");
+>>>>>>> d3818882a0b4c5a8271642aad589871e3ca6c582
             System.out.print("Enter your choice: ");
 
             String choice = scanner.nextLine().toUpperCase();
@@ -34,6 +47,21 @@ public class Main {
             }
         }
         System.out.println("Goodbye!");
+    }
+
+    public static void loadConnection(String username, String password) {
+        BasicDataSource dataSource = new BasicDataSource();
+        dataSource.setUrl(url);
+        dataSource.setUsername(username);
+        dataSource.setPassword(password);
+
+        try {
+            connection = dataSource.getConnection();
+        } catch (SQLException e) {
+            System.out.println("Error when loading connection. Exiting application.");
+            e.printStackTrace();
+            System.exit(1);
+        }
     }
 
     private static void addTransaction(Scanner scanner, List<Transaction> list, boolean deposit) {
