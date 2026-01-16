@@ -6,18 +6,21 @@ import java.util.List;
 import java.util.Scanner;
 import java.util.stream.Collectors;
 
+import static com.pluralsight.Utility.systemDialogue;
+
 public class Ledger {
 
     public static void showLedger(List<Transaction> transactions, Scanner scanner) {
         boolean running = true;
 
         while (running) {
-            System.out.println("\n--- Ledger ---");
-            System.out.println("A) All");
-            System.out.println("D) Deposits");
-            System.out.println("P) Payments");
-            System.out.println("R) Reports");
-            System.out.println("H) Home");
+            systemDialogue("\t--- Ledger ---"+
+                    "\n\t\tA) All"+
+                    "\n\t\tD) Deposits"+
+                    "\n\t\tP) Payments"+
+                    "\n\t\tR) Reports"+
+                    "\n\t\tH) Home");
+
             System.out.print("Enter your choice: ");
 
             String choice = scanner.nextLine().toUpperCase();

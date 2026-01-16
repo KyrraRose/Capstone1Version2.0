@@ -5,6 +5,8 @@ import java.time.LocalTime;
 import java.util.List;
 import java.util.Scanner;
 
+import static com.pluralsight.Utility.systemDialogue;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -14,11 +16,12 @@ public class Main {
         boolean running = true;
 
         while (running) {
-            System.out.println("\n=== FINlANCIAL TRACKER ===");
-            System.out.println("D) Add Deposit");
-            System.out.println("P) Make Payment");
-            System.out.println("L) Ledger");
-            System.out.println("X) Exit");
+            systemDialogue("\n\t=== FINANCIAL TRACKER ==="+
+                    "\n\t\tD) Add Deposit"+
+                    "\n\t\tP) Make Payment"+
+                    "\n\t\tL) Ledger"+
+                    "\n\t\tX) Exit") ;
+
             System.out.print("Enter your choice: ");
 
             String choice = scanner.nextLine().toUpperCase();
